@@ -151,7 +151,6 @@ void MineSweeper::CheckWin() {
 void MineSweeper::RevealDoubleClick(int col, int row) {
   // not revealed -> do nothing
   if (!this->isRevealedTile(col, row)) return;
-
   if (this->CountFlagTile(col, row) 
       != this->getNeighborCountTile(col, row)) return;
 
@@ -164,8 +163,10 @@ void MineSweeper::RevealDoubleClick(int col, int row) {
         // within range 
         if (c > -1 && c < this->col_
             && r > -1 && r < this->row_) {
-          if (!this->isFlaggedTile(c, r)) {
-            this->setRevealedTile(c, r, true);
+          if (!this->isFlaggedTile(c, r)
+              && !this->isDoneTile(c, r)) {
+            this->setDoneTile(c, r, true);
+            this->RevealSingleClick(c, r);
           }
         }
       }
@@ -185,8 +186,10 @@ void MineSweeper::RevealSingleClick(int col, int row) {
           int r = row + yoff;
           // within range 
           if (c > -1 && c < this->col_
-              && r > -1 && r < this->row_) {
-              this->RevealSingleClick(c, r);
+              && r > -1 && r < this->row_
+              && !this->isDoneTile(c, r)) {
+            this->setDoneTile(c, r, true);  
+            this->RevealSingleClick(c, r);
           }
         }
       }
