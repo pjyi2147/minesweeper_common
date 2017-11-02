@@ -33,7 +33,8 @@ public:
   void CheckWin();                                  
 
   void RevealDoubleClick(int col, int row);         
-  
+  void RevealSingleClick(int col, int row);         
+    
   // for minesweeper
   bool isGameEnd();                                 
   bool isWin();                                     

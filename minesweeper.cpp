@@ -173,6 +173,26 @@ void MineSweeper::RevealDoubleClick(int col, int row) {
   }
 }
 
+// single click emulator
+void MineSweeper::RevealSingleClick(int col, int row) {
+  this->setRevealedTile(col, row)
+
+  if (this->getNeighborCountTile(col, row) == 0) {
+    for (int yoff = -1; yoff <= 1; ++yoff) {
+      for (int xoff = -1; xoff <= 1; ++xoff) {
+        if (xoff != 0 || yoff != 0) {
+          int c = col + xoff;
+          int r = row + yoff;
+          // within range 
+          if (c > -1 && c < this->col_
+              && r > -1 && r < this->row_) {
+              this->RevealSingleClick(c, r);
+          }
+        }
+      }
+    }
+  }
+}
 
 // minesweeper functions
 
