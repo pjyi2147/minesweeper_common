@@ -89,7 +89,7 @@ void MineSweeper::CreateMineField(int col, int row) {
     }
   }
 
-  this->RevealSingleClick(col, row, true);
+  this->RevealSingleClick(col, row);
 }
 
 // print the minefield
