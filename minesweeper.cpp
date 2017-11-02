@@ -330,7 +330,7 @@ void MineSweeper::CountMineTile(int col, int row) {
       int r = row + yoff;
 
       if (c > -1 && c < this->col_
-          && r > -1 && this->row_) {
+          && r > -1 && r < this->row_) {
         if (this->isMinedTile(c, r)) ++total;
       }
     }
