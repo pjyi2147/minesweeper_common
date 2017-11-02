@@ -18,6 +18,7 @@ private:
 
   // client only
   bool done_ = false;
+  bool setup_ = false;
 
 public:
   // universal 
@@ -36,7 +37,8 @@ public:
   // for minesweeper
   bool isGameEnd();                                 
   bool isWin();                                     
-
+  bool isSetup();
+  
   int getCol();                                     
   int getRow();                                     
   int getMineNum();                                 
