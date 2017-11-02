@@ -24,6 +24,8 @@ MineSweeper::MineSweeper(int col, int row, int mine_num) {
       this->minefield_[r][c] = Tile(c, r);
     }
   }
+
+  this->setup_ = true;
 }
 
 // copy constructor
@@ -42,6 +44,8 @@ MineSweeper::MineSweeper(MineSweeper& m) {
       this->minefield_[r][c] = Tile(m.getTile(c, r));
     }
   }
+
+  this->setup_ = true;
 }
 
 // deconstructor
@@ -183,6 +187,9 @@ bool MineSweeper::isWin() {
   return this->win_;
 }
 
+bool MineSweeper::isSetup() {
+  return this->setup_;
+}
 
 // get series
 // get column
