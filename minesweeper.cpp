@@ -391,7 +391,7 @@ int MineSweeper::CountCoveredTile(int col, int row) {
 
         if (c > -1 && c < this->col_
             && r > -1 && r < this->row_) {
-          if (!this->isRevealedTile(col, row)) ++total;
+          if (!this->isRevealedTile(c, r)) ++total;
         }
       }
     }
