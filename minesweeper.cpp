@@ -371,7 +371,7 @@ int MineSweeper::CountFlagTile(int col, int row) {
         int r = row + yoff;
 
         if (c > -1 && c < this->col_
-            && r > -1 && this->row_) {
+            && r > -1 && r < this->row_) {
           if (this->isFlaggedTile(c, r)) ++total;    
         }
       }
@@ -390,7 +390,7 @@ int MineSweeper::CountCoveredTile(int col, int row) {
         int r = row + yoff;
 
         if (c > -1 && c < this->col_
-            && r > -1 && this->row_) {
+            && r > -1 && r < this->row_) {
           if (!this->isRevealedTile(col, row)) ++total;
         }
       }
