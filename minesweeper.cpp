@@ -240,7 +240,7 @@ string MineSweeper::getMineState() {
   return s.str();
 }
 
-vector<int> getUntouchedTiles() {
+vector<int> MineSweeper::getUntouchedTiles() {
   vector<int> empty_tiles;
   for (int r = 0; r < this->row_; ++r) {
     for (int c = 0; c < this->col_; ++c) {
