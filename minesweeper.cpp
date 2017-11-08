@@ -177,6 +177,12 @@ void MineSweeper::RevealDoubleClick(int col, int row) {
 // single click emulator
 void MineSweeper::RevealSingleClick(int col, int row) {
   this->setRevealedTile(col, row, true);
+  
+  if (this->isMinedTile(col, row)) {
+    this->setGameEnd(true);
+    this->setWin(false);
+    return;
+  }
 
   if (this->getNeighborCountTile(col, row) == 0) {
     for (int yoff = -1; yoff <= 1; ++yoff) {
