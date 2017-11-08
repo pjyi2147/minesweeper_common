@@ -289,7 +289,7 @@ int MineSweeper::CountAllFlagged() {
   int total = 0;
   for (int r = 0; r < this->row_; ++r) {
     for (int c = 0; c < this->col_; ++c) {
-      if (!this->isFlaggedTile(c, r)) ++total;
+      if (this->isFlaggedTile(c, r)) ++total;
     }
   }
   return total;
