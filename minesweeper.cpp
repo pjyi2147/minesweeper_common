@@ -66,9 +66,16 @@ void MineSweeper::CreateMineField(int col, int row) {
   for (int r = 0; r < this->row_; ++r) {
     for (int c = 0; c < this->col_; ++c) {
       // change here to change the mine exclusion of the first click
+      if (!(r >= row-1 && r <= row+1
+            && c >= col-1 && c<= col+1)) {
+        tile_nums.push_back(r * this->col_ + c);
+      }
+
+      /*  only one tile version
       if (!(r == row && c == col)) {
         tile_nums.push_back(r * this->col_ + c);
       }
+      */
     }
   }
 
