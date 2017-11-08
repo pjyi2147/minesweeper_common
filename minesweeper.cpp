@@ -240,6 +240,19 @@ string MineSweeper::getMineState() {
   return s.str();
 }
 
+vector<int> getUntouchedTiles() {
+  vector<int> empty_tiles;
+  for (int r = 0; r < this->row_; ++r) {
+    for (int c = 0; c < this->col_; ++c) {
+      if (!this->isRevealedTile(c, r) && !this->isFlaggedTile(c, r)) {
+        empty_tiles.push_back(r * this->col_ + c);
+      }
+    }
+  }
+
+  return empty_tiles;
+}
+
 
 // set series
 // set GameEnd
