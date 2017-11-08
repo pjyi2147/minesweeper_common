@@ -44,6 +44,7 @@ public:
   int getRow();                                     
   int getMineNum();                                 
   string getMineState();
+  std::vector<int> getUntouchedTiles();
 
   void setGameEnd(bool finished);
   void setWin(bool win);
