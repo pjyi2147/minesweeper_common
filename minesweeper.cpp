@@ -266,7 +266,7 @@ vector<int> MineSweeper::getUntouchedTiles() {
   return empty_tiles;
 }
 
-vector<int> getRevealedNeighborsTile(int col, int row) {
+vector<int> MineSweeper::getRevealedNeighborsTile(int col, int row) {
   vector<int> revealed_neighbors_list;
   for (int yoff = -1; yoff <= 1; ++yoff) {
     for (int xoff = -1; xoff <= 1; ++xoff) {
