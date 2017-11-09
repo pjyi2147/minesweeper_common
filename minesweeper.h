@@ -61,14 +61,15 @@ public:
   bool isMinedTile(int col, int row);
 
   int getNeighborCountTile(int col, int row);
-  string getTileState(int c, int r);
+  string getTileState(int col, int row);
+  std::vector<int> getRevealedNeighborsTile(int col, int row);
   
   void setDoneTile(int col, int row, bool done);
   void setFlagTile(int col, int row, bool val);
   void setRevealedTile(int col, int row, bool val);
   void setMineTile(int col, int row, bool val);
   void setNeighborCountTile(int col, int row, int val);
-
+  
   void CountMineTile(int col, int row);   // used to set neighborcount  
   int CountFlagTile(int col, int row);    
   int CountCoveredTile(int col, int row);
