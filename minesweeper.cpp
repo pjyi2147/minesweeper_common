@@ -272,7 +272,7 @@ vector<int> MineSweeper::getRevealedNeighborsTile(int col, int row) {
     for (int xoff = -1; xoff <= 1; ++xoff) {
       int t_col = col + xoff, t_row = row + yoff;
       if (t_col > -1 && t_col < this->getCol()
-          && t_row > -1 && t_col < this->getRow()) {
+          && t_row > -1 && t_row < this->getRow()) {
         if (this->isRevealedTile(t_col, t_row)) {
           revealed_neighbors_list.push_back(t_row * this->getCol() + t_col);
         }
