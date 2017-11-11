@@ -45,6 +45,7 @@ public:
   int getMineNum();                                 
   string getMineState();
   std::vector<int> getUntouchedTiles();
+  double getRandomGuessProb();
 
   void setGameEnd(bool finished);
   void setWin(bool win);
