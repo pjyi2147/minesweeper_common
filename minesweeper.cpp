@@ -284,7 +284,7 @@ vector<int> MineSweeper::getRevealedNeighborsTile(int col, int row) {
 
 double MineSweeper::getRandomGuessProb() {
   return double(this->getMineNum() - this->CountAllFlagged()) 
-    / double(this->CountAllCovered());
+    / double(this->getUntouchedTiles().size());
 }
 
 
