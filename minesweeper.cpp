@@ -282,6 +282,11 @@ vector<int> MineSweeper::getRevealedNeighborsTile(int col, int row) {
   return revealed_neighbors_list;
 }
 
+double MineSweeper::getRandomGuessProb() {
+  return double(this->getMineNum() - this->CountAllFlagged()) 
+    / double(this->CountAllCovered());
+}
+
 
 // set series
 // set GameEnd
